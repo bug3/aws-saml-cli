@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
+import { openBrowserAndSaveSession } from './browser';
 import inquirer from 'inquirer';
 
 const program = new Command();
@@ -25,6 +26,8 @@ program
         ]);
 
         const loginUrl = url || answers.loginUrl;
+
+        await openBrowserAndSaveSession(loginUrl);
 
         console.log(`Login URL: ${loginUrl}`);
     });
