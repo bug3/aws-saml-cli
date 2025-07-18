@@ -2,6 +2,7 @@ import { chromium } from 'playwright';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as os from 'os';
+import { assumeRole } from './assumeRole';
 
 export async function captureSAML() {
     const sessionFile = path.join(os.homedir(), '.aws-saml-cli', 'session.json');
@@ -24,8 +25,10 @@ export async function captureSAML() {
     page.on('request', async (request) => {
         if (request.method() === 'POST' && request.url().includes('signin.aws.amazon.com/saml')) {
             const postData = request.postData();
+            const params = new URLSearchParams(postData ?? '');
+            const saml = params.get("SAMLResponse");
 
-            console.log(postData);
+            await assumeRole(saml ?? '');
         }
     });
 
