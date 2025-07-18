@@ -53,4 +53,10 @@ export async function openBrowserAndSaveSession(loginUrl: string) {
 
         await saveSession();
     });
+
+    context.on('close', async () => {
+        console.log('Browser context closed. Saving session...');
+
+        await saveSession();
+    });
 }
