@@ -4,7 +4,7 @@ import * as path from 'path';
 import * as os from 'os';
 import { assumeRole } from './assumeRole';
 
-export async function captureSAML() {
+export async function captureSaml() {
     const sessionFile = path.join(os.homedir(), '.aws-saml-cli', 'session.json');
     const sessionDataRaw = await fs.readFile(sessionFile, 'utf-8');
     const sessionData = JSON.parse(sessionDataRaw);
