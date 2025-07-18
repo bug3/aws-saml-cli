@@ -4,10 +4,10 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 
-export async function assumeRole(saml: string): Promise<void> {
+export async function assumeRole(saml: string, region?: string): Promise<void> {
     const { roleArn, principalArn, durationSeconds } = parseSaml(saml);
 
-    const client = new STSClient({ region: "eu-west-1" });
+    const client = new STSClient(region ? { region } : {});
 
     const command = new AssumeRoleWithSAMLCommand({
         RoleArn: roleArn,

@@ -4,7 +4,7 @@ import * as path from 'path';
 import * as os from 'os';
 import { assumeRole } from './assumeRole';
 
-export async function captureSaml() {
+export async function captureSaml(region?: string) {
     const sessionFile = path.join(os.homedir(), '.aws-saml-cli', 'session.json');
     const sessionDataRaw = await fs.readFile(sessionFile, 'utf-8');
     const sessionData = JSON.parse(sessionDataRaw);
@@ -28,7 +28,7 @@ export async function captureSaml() {
             const params = new URLSearchParams(postData ?? '');
             const saml = params.get("SAMLResponse");
 
-            await assumeRole(saml ?? '');
+            await assumeRole(saml ?? '', region);
         }
     });
 

@@ -36,8 +36,9 @@ program
 program
     .command('capture')
     .description('Capture SAML response from saved session')
-    .action(async () => {
-        await captureSaml();
+    .option('--region <region>', 'AWS region to use for STS call')
+    .action(async (options) => {
+        await captureSaml(options.region);
     });
 
 program.parseAsync(process.argv);
