@@ -2,6 +2,7 @@
 
 import { Command } from 'commander';
 import { openBrowserAndSaveSession } from './browser';
+import { captureSAML } from './saml';
 import inquirer from 'inquirer';
 
 const program = new Command();
@@ -30,6 +31,13 @@ program
         await openBrowserAndSaveSession(loginUrl);
 
         console.log(`Login URL: ${loginUrl}`);
+    });
+
+program
+    .command('capture')
+    .description('Capture SAML response from saved session')
+    .action(async () => {
+        await captureSAML();
     });
 
 program.parseAsync(process.argv);
