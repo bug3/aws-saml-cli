@@ -1,13 +1,13 @@
 import { chromium } from 'playwright';
-import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as os from 'os';
 import { assumeRole } from './assumeRole';
 
+const { parse } = require("uniquenv");
+
 export async function captureSaml(region?: string) {
-    const sessionFile = path.join(os.homedir(), '.aws-saml-cli', 'session.json');
-    const sessionDataRaw = await fs.readFile(sessionFile, 'utf-8');
-    const sessionData = JSON.parse(sessionDataRaw);
+    const sessionFile = path.join(os.homedir(), '.aws-saml-cli', 'session.uniquenv');
+    const sessionData = parse(sessionFile);
 
     const browser = await chromium.launch({ headless: false });
     const context = await browser.newContext({
