@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# TypeScript output
+dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# CLI session data
+.aws-saml-cli/
