@@ -1,6 +1,7 @@
 {
     "name": "aws-saml-cli",
     "version": "1.0.1",
+    "author": "bug3",
     "description": "A CLI tool to fetch AWS credentials via SAML authentication",
     "license": "MIT",
     "bin": {
@@ -22,6 +23,14 @@
         "inquirer": "^12.7.0",
         "playwright": "^1.54.1",
         "uniquenv": "^0.0.5"
+    },
+    "homepage": "https://github.com/bug3/aws-saml-cli#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bug3/aws-saml-cli.git"
+    },
+    "bugs": {
+        "url": "https://github.com/bug3/aws-saml-cli/issues"
     },
     "files": [
         "bin",
