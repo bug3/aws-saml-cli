@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "A CLI tool to fetch AWS credentials via SAML authentication",
     "bin": {
-        "aws-saml": "bin/aws-saml"
+        "aws-saml-cli": "bin/aws-saml-cli"
     },
     "scripts": {
         "build": "tsc",
