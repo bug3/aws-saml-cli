@@ -6,6 +6,8 @@
         "rootDir": "src",
         "strict": true,
         "esModuleInterop": true,
+        "declaration": true,
+        "emitDeclarationOnly": false,
         "types": [
             "node"
         ]
