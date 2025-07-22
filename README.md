@@ -1,4 +1,4 @@
-# aws-saml-cli
+# aws-saml-cli &middot; [![npm version](https://img.shields.io/npm/v/aws-saml-cli.svg)](https://www.npmjs.com/package/aws-saml-cli) [![CLI tool](https://img.shields.io/badge/type-cli-blue)](https://www.npmjs.com/package/aws-saml-cli) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bug3/syringa/blob/master/LICENSE)
 
 CLI tool for SAML-based AWS authentication via your Identity Provider (IdP).  
 Securely saves your login session, captures the SAML response, parses the assertion, and assumes your AWS role with STS.
