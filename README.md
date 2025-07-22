@@ -63,11 +63,11 @@ aws-saml-cli capture [--region <aws-region>]
 ## Example Workflow
 
 ```bash
-aws-saml save-session "https://your-idp.example.com/sso/initiate"
+aws-saml-cli save-session "https://your-idp.example.com/sso/initiate"
 ```
 
 ```bash
-aws-saml capture --region eu-west-1
+aws-saml-cli capture --region eu-west-1
 ```
 
 ```bash
