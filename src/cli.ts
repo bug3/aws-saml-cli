@@ -10,7 +10,7 @@ const program = new Command();
 program
     .name('aws-saml-cli')
     .description('Fetch and manage AWS SAML sessions')
-    .version('1.0.2');
+    .version('1.0.3');
 
 program
     .command('save-session')
