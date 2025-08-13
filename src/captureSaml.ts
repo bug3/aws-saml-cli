@@ -5,7 +5,7 @@ import { assumeRole } from './assumeRole';
 
 const { parse } = require("uniquenv");
 
-export async function captureSaml(region?: string) {
+export async function captureSaml(region: string = 'eu-west-1') {
     const sessionFile = path.join(os.homedir(), '.aws-saml-cli', 'session.uniquenv');
     const sessionData = parse(sessionFile);
 

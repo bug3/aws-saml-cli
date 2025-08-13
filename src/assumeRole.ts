@@ -6,7 +6,7 @@ import path from "path";
 
 export async function assumeRole(
     saml: string,
-    region?: string,
+    region: string,
     profile: string = "default"
 ): Promise<void> {
     const { roleArn, principalArn, durationSeconds } = parseSaml(saml);
